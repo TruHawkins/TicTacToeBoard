@@ -41,7 +41,6 @@ class TicTacToeBoard
      * should neither change the board nor change whose turn it is.
     **/  
   	Piece placePiece(int row, int column);
-
   	/**
   	 * Returns what piece is at the provided coordinates, or Blank if there
   	 * are no pieces there, or Invalid if the coordinates are out of bounds
