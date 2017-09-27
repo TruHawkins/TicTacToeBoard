@@ -56,6 +56,10 @@ TEST(TicTacToeBoardTest, DiagnolDownWin)
 	tb.placePiece(2,0);
 	ASSERT_TRUE(tb.getWinner() == X);
 }
+/**
+ * BUG: in getWinner(), it is supposed to return blank if the board is full and there is no winner
+ * in my code it doesn't check for the winner and return invalid
+ **/
 
 TEST(TicTacToeBoardTest, noWinner)
 {
@@ -70,4 +74,13 @@ TEST(TicTacToeBoardTest, noWinner)
 	tb.placePiece(0,1);
 	tb.placePiece(0,0);
 	ASSERT_TRUE(tb.getWinner() == Blank);
+}
+
+TEST(TicTacToeBoardTest, gameNotOver)
+{
+	TicTacToeBoard tb;
+	tb.placePiece(0,0);
+	tb.placePiece(0,1);
+	tb.placePiece(2,2);
+	ASSERT_TRUE(tb.getWinner() == Invalid);
 }
